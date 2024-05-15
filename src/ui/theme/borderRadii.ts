@@ -1,0 +1,4 @@
+export const BORDER_RADII = {
+  BUTTON_RADIUS: 44,
+  CARD_RADIUS: 16,
+}

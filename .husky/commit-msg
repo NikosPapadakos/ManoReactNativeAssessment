@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Running commit-msg hook"
+
+commit_msg_file="$1"
+commit_msg=$(cat "$commit_msg_file")
+
+# Define commit message types as an array
+commit_msg_types=("BREAKING CHANGE" "build" "chore" "ci" "docs" "feat" "fix" "perf" "refactor" "revert" "style" "test")
+
+
+
+regex="^($(IFS="|"; echo "${commit_msg_types[*]}")): "
+
+if echo "$commit_msg" | grep -qiE "$regex"; then
+  echo "Commit message matches the pattern"
+else
+  echo "Commit message does not match the pattern"
+  echo "Please use the format: (${commit_msg_types[*]}): <commit_msg>"
+  exit 1
+fi

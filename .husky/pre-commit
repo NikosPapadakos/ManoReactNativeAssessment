@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run checks before commit
+yarn run fix-prettier
+yarn run check
+yarn run test
+  

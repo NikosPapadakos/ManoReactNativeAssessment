@@ -1,3 +1,23 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@components": ["src/ui/components"],
+      "@screens": ["src/ui/screens"],
+      "@theme": ["src/ui/theme"],
+      "@theme/*": ["src/ui/theme/*"],
+      "@utils": ["src/utils"],
+      "@navigation": ["src/ui/navigation"],
+      "@assets": ["assets"],
+      "@models": ["src/models"],
+      "@services": ["src/services"],
+      "@hooks": ["src/hooks"],
+      "@store": ["src/store"],
+    }
+  },
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "exclude": ["__tests__/**/*-test.ts"]
 }
