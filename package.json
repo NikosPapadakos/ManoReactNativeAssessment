@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "ios": "react-native run-ios --simulator 'iPhone 15 Pro Max'",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
@@ -16,6 +16,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
     "moti": "^0.29.0",
     "react": "18.2.0",
     "react-native": "0.74.1",
@@ -58,10 +59,7 @@
     "jest-transform-stub": "^2.0.0",
     "metro-react-native-babel-preset": "0.76.8",
     "prettier": "^3.0.3",
-    "react-native-flipper": "^0.164.0",
-    "react-native-svg-transformer": "^1.1.0",
     "react-test-renderer": "18.2.0",
-    "redux-flipper": "^2.0.2",
     "typescript": "5.2.2"
   },
   "engines": {
