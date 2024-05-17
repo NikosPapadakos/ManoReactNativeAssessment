@@ -9,7 +9,7 @@ export const MaxWidthComponent = styled(View)`
 
 export const SafeArea = styled(SafeAreaView)`
   flex: 1;
-  background-color: ${COLORS.BACKGROUND.ANYTIME_WHITE};
+  background-color: ${COLORS.BACKGROUND.TOTAL_WHITE};
 `
 
 export const SafeAreaContentWrapper = styled(View)`

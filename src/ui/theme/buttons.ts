@@ -9,7 +9,7 @@ import {
 } from '@theme'
 
 export const PrimaryButtonStyle = `
-  background-color: ${COLORS.PRIMARY.BLUE_RIBBON};
+  background-color: ${COLORS.PRIMARY.RED};
   align-items: center;
   justify-content: center;
   padding: ${SPACES.xxl}px ${SPACES['6xl']}px;
@@ -19,7 +19,7 @@ export const PrimaryButtonStyle = `
 `
 
 export const PrimaryTextStyle = `
-  color: ${COLORS.BACKGROUND.ANYTIME_WHITE};
+  color: ${COLORS.BACKGROUND.TOTAL_WHITE};
   font-family: ${FONTS.BOLD};
   font-size: ${FONT_SCALE.BODY.P1}px;
   line-height: ${LINE_HEIGHT.BODY.P3}px;
@@ -32,7 +32,7 @@ export const TextButtonStyle = `
 `
 
 export const TextButtonTextStyle = `
-  color: ${COLORS.PRIMARY.BLUE_RIBBON};
+  color: ${COLORS.PRIMARY.RED};
   font-family: ${FONTS.BOLD};
   font-size: ${FONT_SCALE.BODY.P1}px;
   letter-spacing: ${LETTER_SPACING.BODY.P1}px;
