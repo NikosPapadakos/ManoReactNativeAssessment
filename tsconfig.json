@@ -16,7 +16,7 @@
       "@models/*": ["src/models/*"],
       "@services/*": ["src/services/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@store/*": ["src/store/*"]
+      "@store": ["src/store"],
     }
   },
   "extends": "@tsconfig/react-native/tsconfig.json",
