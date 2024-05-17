@@ -2,7 +2,7 @@
 
 ## Requirements
 
-To run this project, Java 17 is required. You can download it from the following link: [Java 17 Download]([https://www.oracle.com/in/java/technologies/downloads/#jdk17-windows](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html))
+To run this project, Java 17 is required. You can download it from the following link: [Java 17 Download](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 
 ## How to Run
 
