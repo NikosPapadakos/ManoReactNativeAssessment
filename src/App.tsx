@@ -1,13 +1,17 @@
 import React from 'react'
+// import 'react-native-gesture-handler'
+import { enableScreens } from 'react-native-screens'
 import { Provider } from 'react-redux'
 
-import { SplashScreen } from '@components/SplashScreen'
+import { AppNavigator } from '@screens'
 import { store } from '@store'
+
+enableScreens()
 
 export const App = () => {
   return (
     <Provider store={store}>
-      <SplashScreen />
+      <AppNavigator />
     </Provider>
   )
 }

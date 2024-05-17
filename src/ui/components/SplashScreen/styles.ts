@@ -1,14 +1,20 @@
-import { ImageSourcePropType } from 'react-native'
+import { Dimensions, ImageSourcePropType } from 'react-native'
 
 import MANO_LOGO from '@assets/images/mano-logo-with-title.png'
 import { COLORS } from '@theme/colors'
+import { MotiView } from 'moti'
 import styled from 'styled-components/native'
 
-export const SplashContainer = styled.View`
+const { height, width } = Dimensions.get('window')
+
+export const SplashContainer = styled(MotiView)`
+  position: absolute;
+  height: ${height}px;
+  width: ${width}px;
   background-color: ${COLORS.BACKGROUND.TOTAL_WHITE};
-  flex: 1;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 `
 
 export const InnerWrapper = styled.View`
