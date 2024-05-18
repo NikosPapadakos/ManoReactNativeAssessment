@@ -45,7 +45,7 @@ export const CartModal = ({ isVisible, setIsVisible }: CartModalProps) => {
           <Title>Your Cart</Title>
           <ScrollView bounces={false}>
             {cartItems.map((item) => (
-              <ProductRow key={item.id} product={item} />
+              <ProductRow key={item.id} product={item} closeModal={onClose} />
             ))}
           </ScrollView>
           <Total>

@@ -3724,6 +3724,7 @@ __metadata:
     react: 18.2.0
     react-native: 0.74.1
     react-native-dotenv: ^3.4.11
+    react-native-image-viewing: ^0.2.2
     react-native-linear-gradient: ^2.8.3
     react-native-reanimated: ^3.11.0
     react-native-safe-area-context: ^4.10.1
@@ -10033,6 +10034,16 @@ __metadata:
   peerDependencies:
     "@babel/runtime": ^7.20.6
   checksum: 3ebac2c2ed79dd7e4920fd3fc2da9187413b7190231618e4858b46c47833677838b96d531afe7bd5c4b0a60454dba40cb8708722210df5d522e30aefbf41da05
+  languageName: node
+  linkType: hard
+
+"react-native-image-viewing@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "react-native-image-viewing@npm:0.2.2"
+  peerDependencies:
+    react: ">=16.11.0"
+    react-native: ">=0.61.3"
+  checksum: 17f16958ebc00787453d68ca0a695ee5fd9c59865fc525e192de6f200f4b91caa3af3da5a9908e28c94370ea28382074328f917c5398a27b112dd986985f77a0
   languageName: node
   linkType: hard
 

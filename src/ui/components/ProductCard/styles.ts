@@ -1,16 +1,25 @@
-import { Platform } from 'react-native'
+import { Platform } from 'react-native';
 
-import { CustomButton } from '@components/CustomButton'
-import { BORDER_RADII, COLORS, SCREEN_SPACING, SPACES } from '@theme'
-import { RoundedDarkShadowedCard } from '@theme/cards'
-import { H3, H4 } from '@theme/typography'
-import styled from 'styled-components/native'
+
+
+import { CustomButton } from '@components/CustomButton';
+import { BORDER_RADII, COLORS, SCREEN_SPACING, SPACES } from '@theme';
+import { RoundedDarkShadowedCard } from '@theme/cards';
+import { H3, H4 } from '@theme/typography';
+import styled from 'styled-components/native';
+
 
 export const Card = styled(RoundedDarkShadowedCard)<{
   index: number
+  height?: number
+  width?: number
 }>`
+  ${({ width }) => (width !== undefined ? `width: ${width}px;` : '')};
+  ${({ height }) => (height !== undefined ? `height: ${height}px;` : '')};
   background-color: ${COLORS.WHITE.TOTAL_WHITE};
   margin: ${({ index }) => {
+    if (index === -1) return `0px;`
+
     if (index % 2 === 0) {
       return `${SPACES.md}px ${SPACES.lg}px ${SPACES.md}px ${SCREEN_SPACING.SCREEN_SIDE}px`
     }

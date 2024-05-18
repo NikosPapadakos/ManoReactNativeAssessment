@@ -62,7 +62,7 @@ describe('ProductCardComp', () => {
 
     fireEvent.press(getByTestId('card-btn'))
     expect(mockNavigate).toHaveBeenCalledWith('ProductDetailsScreen', {
-      product_id: product.id,
+      productId: product.id,
     })
   })
 
@@ -73,6 +73,8 @@ describe('ProductCardComp', () => {
 
     const addButton = getByTestId('add-cart-btn')
     fireEvent.press(addButton)
-    expect(mockDispatch).toHaveBeenCalledWith(addProduct(product))
+    expect(mockDispatch).toHaveBeenCalledWith(
+      addProduct({ product, quantity: 1 })
+    )
   })
 })

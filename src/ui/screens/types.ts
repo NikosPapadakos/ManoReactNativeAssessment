@@ -5,5 +5,5 @@ import { SCREEN_NAMES } from './screenNames'
 
 export type AppParamList = {
   [SCREEN_NAMES.App.HomeScreen]: undefined
-  [SCREEN_NAMES.App.ProductDetailsScreen]: { product_id: Product['id'] }
+  [SCREEN_NAMES.App.ProductDetailsScreen]: { productId: Product['id'] }
 } & ParamListBase

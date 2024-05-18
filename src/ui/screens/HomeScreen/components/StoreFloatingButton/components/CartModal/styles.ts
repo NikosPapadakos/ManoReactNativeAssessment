@@ -30,6 +30,7 @@ export const ModalContent = styled(RoundedLightShadowedCard)`
 
 export const Title = styled(H2)`
   align-self: center;
+  margin-bottom: ${SPACES.lg}px;
 `
 
 export const Total = styled(H3)`

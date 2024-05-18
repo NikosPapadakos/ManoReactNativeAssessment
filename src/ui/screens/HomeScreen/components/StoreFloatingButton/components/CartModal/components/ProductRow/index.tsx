@@ -1,6 +1,10 @@
 import React from 'react'
+import { TouchableOpacity } from 'react-native'
 import { useDispatch } from 'react-redux'
 
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { AppParamList } from '@screens/types'
 import { addProduct, removeProduct } from '@store/slices/cartSlice'
 import { CartItem } from '@store/slices/cartSlice/types'
 
@@ -15,11 +19,30 @@ import {
   ProductTitle,
 } from './styles'
 
-export const ProductRow = ({ product }: { product: CartItem }) => {
+export const ProductRow = ({
+  product,
+  closeModal,
+}: {
+  product: CartItem
+  closeModal: () => void
+}) => {
   const dispatch = useDispatch()
 
+  const navigation = useNavigation<NativeStackNavigationProp<AppParamList>>()
+  const navigateToProductDetails = () => {
+    closeModal()
+    navigation.navigate('ProductDetailsScreen', {
+      productId: product.id,
+    })
+  }
+
   const handleAddProduct = (prod: CartItem) => {
-    dispatch(addProduct(prod))
+    dispatch(
+      addProduct({
+        product: prod,
+        quantity: 1,
+      })
+    )
   }
 
   const handleRemoveProduct = (productId: CartItem['id']) => {
@@ -28,7 +51,9 @@ export const ProductRow = ({ product }: { product: CartItem }) => {
 
   return (
     <ProductRowStyle>
-      <ProductImg source={{ uri: product?.images?.[0]?.thumbnail }} />
+      <TouchableOpacity onPress={navigateToProductDetails}>
+        <ProductImg source={{ uri: product?.images?.[0]?.thumbnail }} />
+      </TouchableOpacity>
       <DetailsCol>
         <ProductTitle numberOfLines={1}>{product.title}</ProductTitle>
         <DetailsRow>

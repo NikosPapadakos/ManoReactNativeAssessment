@@ -1,6 +1,6 @@
 import { ButtonsStyle } from '@components/CustomButton/types'
 import { COLORS } from '@theme'
-import { P3 } from '@theme/typography'
+import { H4 } from '@theme/typography'
 import styled from 'styled-components/native'
 
 export const TitleContainer = styled.View`
@@ -27,14 +27,14 @@ export const Title = styled.Text`
 
 export const QuantityWrapper = styled.View`
   background-color: ${COLORS.WHITE.TOTAL_WHITE};
-  min-width: 22px;
-  height: 20px;
+  min-width: 26px;
+  height: 26px;
   border-radius: 3px;
   justify-content: center;
   align-items: center;
 `
 
-export const Quantity = styled(P3)`
+export const Quantity = styled(H4)`
   color: ${COLORS.PRIMARY.RED};
   margin-left: 1px;
 `

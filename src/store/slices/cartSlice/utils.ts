@@ -5,15 +5,15 @@ import { CartItem, CartState } from './types'
 
 export const addToCart = (
   state: CartState,
-  action: PayloadAction<CartItem>
+  action: PayloadAction<{ product: CartItem; quantity: number }>
 ) => {
-  const product = action.payload
+  const { product, quantity } = action.payload
   const existingProduct = state.products.find((p) => p.id === product.id)
   if (existingProduct && existingProduct?.cartQuantity !== undefined) {
-    existingProduct.cartQuantity += 1
+    existingProduct.cartQuantity += quantity
     return
   }
-  state.products.push({ ...product, cartQuantity: 1 })
+  state.products.push({ ...product, cartQuantity: quantity })
 }
 
 export const removeFromCart = (

@@ -10,7 +10,6 @@
       "@screens/*": ["src/ui/screens/*"],
       "@theme": ["src/ui/theme"],
       "@theme/*": ["src/ui/theme/*"],
-      "@utils/*": ["src/utils/*"],
       "@assets": ["assets/"],
       "@assets/*": ["assets/*"],
       "@models/*": ["src/models/*"],

@@ -4,7 +4,7 @@ import { H4, P1, P3 } from '@theme/typography'
 import styled from 'styled-components/native'
 
 export const ProductRowStyle = styled.View`
-  margin-top: ${SPACES.lg}px;
+  margin-bottom: ${SPACES.lg}px;
   flex-direction: row;
   gap: ${SPACES.lg}px;
 `

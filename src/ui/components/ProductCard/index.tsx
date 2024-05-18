@@ -22,7 +22,14 @@ import {
 } from './styles'
 import { ProductCardProps } from './types'
 
-export const ProductCardComp = ({ product, index }: ProductCardProps) => {
+export const ProductCardComp = ({
+  product,
+  index,
+  hideButton = false,
+  height = undefined,
+  width = undefined,
+  titleNumberOfLines = 5,
+}: ProductCardProps) => {
   if (product === null) return <SkeletonPlaceholder index={index} />
 
   const dispatch: AppDispatch = useDispatch()
@@ -31,16 +38,16 @@ export const ProductCardComp = ({ product, index }: ProductCardProps) => {
 
   const onPressCard = () => {
     navigation.navigate(SCREEN_NAMES.App.ProductDetailsScreen, {
-      product_id: product?.id,
+      productId: product?.id,
     })
   }
 
   const handleAddProduct = () => {
-    dispatch(addProduct(product))
+    dispatch(addProduct({ product, quantity: 1 }))
   }
 
   return (
-    <Card index={index}>
+    <Card index={index} height={height} width={width}>
       <TouchableOpacity onPress={onPressCard} testID='card-btn'>
         <ImageContainer>
           <BgImage source={{ uri: product?.images?.[0]?.thumbnail }} />
@@ -49,13 +56,15 @@ export const ProductCardComp = ({ product, index }: ProductCardProps) => {
           </PriceBubble>
         </ImageContainer>
         <ContentWrapper>
-          <Title>{product?.title}</Title>
-          <StyledButton
-            testID='add-cart-btn'
-            type='secondary'
-            title='Add to cart'
-            onPress={handleAddProduct}
-          />
+          <Title numberOfLines={titleNumberOfLines}>{product?.title}</Title>
+          {!hideButton && (
+            <StyledButton
+              testID='add-cart-btn'
+              type='secondary'
+              title='Add to cart'
+              onPress={handleAddProduct}
+            />
+          )}
         </ContentWrapper>
       </TouchableOpacity>
     </Card>

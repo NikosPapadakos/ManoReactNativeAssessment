@@ -42,11 +42,7 @@ const iterateOverChildren = (
 
     const skeletonProps = customSkeletons[child.props.id] ?? {}
     return (
-      <Skeleton
-        colorMode='light'
-        {...skeletonProps}
-        colors={COLORS.SKELETON_PALETTE}
-      >
+      <Skeleton {...skeletonProps} colors={COLORS.SKELETON_PALETTE}>
         {cloneElement(child, {
           ...child.props,
           children: iterateOverChildren(child.props.children, customSkeletons),

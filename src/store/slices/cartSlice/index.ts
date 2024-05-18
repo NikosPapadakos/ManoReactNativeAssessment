@@ -19,6 +19,8 @@ const cartSlice = createSlice({
 
 export const { addProduct, removeProduct } = cartSlice.actions
 
+export const cartReducer = cartSlice.reducer
+
 export const selectTotalQuantity = (state: RootState): number =>
   state.cart.products.reduce(
     (total, product) => total + (product.cartQuantity ?? 0),
@@ -31,5 +33,3 @@ export const selectTotalPrice = (state: RootState): number =>
       total + parseFloat(product.price) * (product.cartQuantity ?? 0),
     0
   )
-
-export const cartReducer = cartSlice.reducer

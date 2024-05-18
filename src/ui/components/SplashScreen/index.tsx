@@ -33,6 +33,7 @@ export const SplashScreen = ({ show }: { show: boolean }) => {
         animate={{ opacity: 1 }}
         transition={{
           duration: 1000,
+          delay: 500,
         }}
       >
         <Logo />

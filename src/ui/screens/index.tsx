@@ -25,13 +25,15 @@ export const AppNavigator = () => {
           }, 2000)
         }}
       >
-        <Stack.Navigator initialRouteName={SCREEN_NAMES.App.InitialRouteName}>
+        <Stack.Navigator
+          initialRouteName={SCREEN_NAMES.App.InitialRouteName}
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
           <Stack.Screen
             name={SCREEN_NAMES.App.HomeScreen}
             component={HomeScreen}
-            options={{
-              headerShown: false,
-            }}
           />
           <Stack.Screen
             name={SCREEN_NAMES.App.ProductDetailsScreen}

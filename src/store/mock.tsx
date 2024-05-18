@@ -1,16 +1,11 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
-import { Provider, TypedUseSelectorHook } from 'react-redux';
+import React, { PropsWithChildren, ReactElement } from 'react'
+import { Provider, TypedUseSelectorHook } from 'react-redux'
 
+import { configureStore } from '@reduxjs/toolkit'
+import { RootState } from '@store'
+import { render } from '@testing-library/react-native'
 
-
-import { configureStore } from '@reduxjs/toolkit';
-import { RootState } from '@store';
-import { render } from '@testing-library/react-native';
-
-
-
-import { slicesReducer } from './slices';
-
+import { slicesReducer } from './slices'
 
 /**
  * @param preloadedState used to load the store with different values.
