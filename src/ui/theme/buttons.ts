@@ -12,9 +12,8 @@ export const PrimaryButtonStyle = `
   background-color: ${COLORS.PRIMARY.RED};
   align-items: center;
   justify-content: center;
-  padding: ${SPACES.xxl}px ${SPACES['6xl']}px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  padding: ${SPACES.xxl}px;
+  width: 100%;
   border-radius: ${BORDER_RADII.BUTTON_RADIUS}px;
 `
 
@@ -25,15 +24,20 @@ export const PrimaryTextStyle = `
   line-height: ${LINE_HEIGHT.BODY.P3}px;
 `
 
-export const TextButtonStyle = `
-  justify-content: center;
+export const SecondaryButtonStyle = `
   align-items: center;
-  padding:20px;
+  justify-content: center;
+  width: 100%;
+  padding: ${SPACES.xxl}px;
+  border-width: 1px;
+  border-color: ${COLORS.PRIMARY.RED};
+  border-radius: ${BORDER_RADII.BUTTON_RADIUS}px;
 `
 
-export const TextButtonTextStyle = `
+export const SecondaryButtonTextStyle = `
   color: ${COLORS.PRIMARY.RED};
   font-family: ${FONTS.BOLD};
   font-size: ${FONT_SCALE.BODY.P1}px;
-  letter-spacing: ${LETTER_SPACING.BODY.P1}px;
+  letter-spacing: ${LETTER_SPACING.BODY.P3}px;
+  border-radius: ${BORDER_RADII.BUTTON_RADIUS}px;
 `

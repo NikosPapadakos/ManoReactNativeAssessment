@@ -7,6 +7,7 @@ import { ListEmptyComponent } from './components/ListEmptyComponent'
 
 export const StyledSafeArea = styled(SafeArea)`
   padding: 0px 0px;
+  position: relative;
 `
 export const List = styled(MasonryFlashList).attrs({
   contentContainerStyle: {

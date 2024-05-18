@@ -1,3 +1,6 @@
+import { Platform } from 'react-native'
+
+import { CustomButton } from '@components/CustomButton'
 import { BORDER_RADII, COLORS, SCREEN_SPACING, SPACES } from '@theme'
 import { RoundedDarkShadowedCard } from '@theme/cards'
 import { H3, H4 } from '@theme/typography'
@@ -56,3 +59,9 @@ export const ContentWrapper = styled.View`
 `
 
 export const Title = styled(H4)``
+
+export const StyledButton = styled(CustomButton)`
+  padding: ${SPACES.lg}px ${SPACES.md}px
+    ${Platform.OS === 'ios' ? SPACES.lg : SPACES.md}px ${SPACES.md}px;
+  margin-top: ${SPACES.md}px;
+`

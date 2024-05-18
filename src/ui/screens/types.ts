@@ -1,5 +1,5 @@
 import { ParamListBase } from '@react-navigation/native'
-import { Product } from '@services/apis/productsApi/types'
+import { Product } from '@store/services/apis/productsApi/types'
 
 import { SCREEN_NAMES } from './screenNames'
 

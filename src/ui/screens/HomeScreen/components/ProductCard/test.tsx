@@ -2,17 +2,27 @@
 import React from 'react'
 
 import { useNavigation } from '@react-navigation/native'
-import { MOCK_PRODUCTS_RES } from '@services/apis/productsApi/endpoints/getAllProducts/mock'
-import { fireEvent, render } from '@testing-library/react-native'
+import { renderWithProviders } from '@store/mock'
+import { MOCK_PRODUCTS_RES } from '@store/services/apis/productsApi/endpoints/getAllProducts/mock'
+import { addProduct } from '@store/slices/cartSlice'
+import { fireEvent } from '@testing-library/react-native'
 
 import { ProductCardComp } from './'
 import { SkeletonPlaceholder } from './SkeletonPlaceholder'
+
+const mockDispatch = jest.fn()
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useDispatch: jest.fn(() => mockDispatch),
+}))
 
 jest.mock('@react-navigation/native', () => ({
   useNavigation: jest.fn(),
 }))
 
 jest.mock('./styles', () => ({
+  ...jest.requireActual('./styles'),
   BgImage: jest.fn(() => null),
   Card: jest.fn(({ children }) => children),
   ContentWrapper: jest.fn(({ children }) => children),
@@ -41,12 +51,12 @@ describe('ProductCardComp', () => {
   })
 
   it('renders SkeletonPlaceholder when product is null', () => {
-    render(<ProductCardComp product={null} index={0} />)
+    renderWithProviders(<ProductCardComp product={null} index={0} />)
     expect(SkeletonPlaceholder).toHaveBeenCalledWith({ index: 0 }, {})
   })
 
   it('navigates to ProductDetailsScreen on card press', () => {
-    const { getByTestId } = render(
+    const { getByTestId } = renderWithProviders(
       <ProductCardComp product={product} index={0} />
     )
 
@@ -54,5 +64,15 @@ describe('ProductCardComp', () => {
     expect(mockNavigate).toHaveBeenCalledWith('ProductDetailsScreen', {
       product_id: product.id,
     })
+  })
+
+  it('dispatches addProduct action on add to cart button press', () => {
+    const { getByTestId } = renderWithProviders(
+      <ProductCardComp product={product} index={0} />
+    )
+
+    const addButton = getByTestId('add-cart-btn')
+    fireEvent.press(addButton)
+    expect(mockDispatch).toHaveBeenCalledWith(addProduct(product))
   })
 })

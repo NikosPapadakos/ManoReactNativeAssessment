@@ -1,12 +1,13 @@
 import React from 'react'
 import { RefreshControl } from 'react-native'
 
-import { useGetAllProductsQuery } from '@services/apis/productsApi'
-import { Product } from '@services/apis/productsApi/types'
+import { useGetAllProductsQuery } from '@store/services/apis/productsApi'
+import { Product } from '@store/services/apis/productsApi/types'
 import { SPACES, Spacer } from '@theme'
 
 import { ListHeaderComponent } from './components/ListHeaderComponent'
 import { ProductCard } from './components/ProductCard'
+import { StoreFloatingButton } from './components/StoreFloatingButton'
 import { List, StyledSafeArea } from './styles'
 import { ProductOrNull, ProductsArray } from './types'
 import { filterProductsByTitle } from './utils'
@@ -46,6 +47,7 @@ export const HomeScreen = () => {
           />
         }
       />
+      <StoreFloatingButton />
     </StyledSafeArea>
   )
 }

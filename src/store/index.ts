@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { rtkMiddleware, rtkReducer } from '@services/apis'
+
+import { rtkMiddleware, rtkReducer } from '../store/services/apis'
+import { slicesReducer } from './slices'
 
 export const store = configureStore({
-  reducer: { ...rtkReducer },
+  reducer: { ...slicesReducer, ...rtkReducer },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
