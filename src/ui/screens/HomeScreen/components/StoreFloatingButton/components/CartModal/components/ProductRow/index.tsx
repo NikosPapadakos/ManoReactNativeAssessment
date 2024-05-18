@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { TouchableOpacity } from 'react-native'
 import { useDispatch } from 'react-redux'
 
@@ -29,25 +29,31 @@ export const ProductRow = ({
   const dispatch = useDispatch()
 
   const navigation = useNavigation<NativeStackNavigationProp<AppParamList>>()
-  const navigateToProductDetails = () => {
+  const navigateToProductDetails = useCallback(() => {
     closeModal()
     navigation.navigate('ProductDetailsScreen', {
       productId: product.id,
     })
-  }
+  }, [product.id, navigation, closeModal])
 
-  const handleAddProduct = (prod: CartItem) => {
-    dispatch(
-      addProduct({
-        product: prod,
-        quantity: 1,
-      })
-    )
-  }
+  const handleAddProduct = useCallback(
+    (prod: CartItem) => {
+      dispatch(
+        addProduct({
+          product: prod,
+          quantity: 1,
+        })
+      )
+    },
+    [dispatch]
+  )
 
-  const handleRemoveProduct = (productId: CartItem['id']) => {
-    dispatch(removeProduct(productId))
-  }
+  const handleRemoveProduct = useCallback(
+    (productId: CartItem['id']) => {
+      dispatch(removeProduct(productId))
+    },
+    [dispatch]
+  )
 
   return (
     <ProductRowStyle>

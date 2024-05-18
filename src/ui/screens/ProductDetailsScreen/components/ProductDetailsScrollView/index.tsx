@@ -22,11 +22,13 @@ export const ProductDetailsScrollView = ({
 }) => {
   if (!product) return null
 
+  const { title, price } = product.data ?? { title: '', price: '' }
+
   return (
     <StyledShadow>
       <StyledScrollView>
-        <ProductTitle>{product.data.title}</ProductTitle>
-        <ProductPrice>{product.data.price}₦/item</ProductPrice>
+        <ProductTitle>{title}</ProductTitle>
+        <ProductPrice>{price}₦/item</ProductPrice>
         <SuggestedProductsSlider products={similarProducts} />
       </StyledScrollView>
     </StyledShadow>

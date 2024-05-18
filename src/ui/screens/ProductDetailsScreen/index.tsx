@@ -28,6 +28,7 @@ export const ProductDetailsScreen = () => {
   const goBack = () => {
     navigation.goBack()
   }
+
   if (error !== undefined) {
     Alert.alert(
       'Error!',

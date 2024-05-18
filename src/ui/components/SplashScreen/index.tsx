@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { MotiView } from 'moti'
 
 import { Logo, SplashContainer } from './styles'
 
 export const SplashScreen = ({ show }: { show: boolean }) => {
-  const [animationFinished, setAnimationFinished] = React.useState(false)
+  const [animationFinished, setAnimationFinished] = useState(false)
 
   return (
     <SplashContainer

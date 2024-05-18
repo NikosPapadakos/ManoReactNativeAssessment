@@ -34,11 +34,11 @@ export const AddToCartSection = ({ product }: { product: Product }) => {
 
   const dispatch = useDispatch()
 
-  const handleAddProduct = () => {
+  const handleAddProduct = useCallback(() => {
     dispatch(addProduct({ product, quantity }))
     setQuantity(1)
     navigation.navigate(SCREEN_NAMES.App.HomeScreen)
-  }
+  }, [dispatch, product, quantity, navigation])
 
   return (
     <OuterContainer>

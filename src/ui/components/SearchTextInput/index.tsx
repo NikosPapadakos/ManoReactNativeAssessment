@@ -15,7 +15,7 @@ export const SearchTextInput = ({
     setQuery('')
   }, [])
 
-  const onChange = useCallback((text: string) => {
+  const onChange = useCallback((text: SearchTextInputProps['query']) => {
     setQuery(text)
   }, [])
 

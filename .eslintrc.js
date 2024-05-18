@@ -13,10 +13,12 @@ module.exports = {
       },
     },
   },
+
   env: {
     node: true,
     es2021: true,
   },
+  ignorePatterns: ['Task2'],
   extends: [
     'plugin:react/recommended',
     'prettier',

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { TouchableOpacity } from 'react-native'
 import { useDispatch } from 'react-redux'
 
@@ -36,15 +36,15 @@ export const ProductCardComp = ({
 
   const navigation = useNavigation<NativeStackNavigationProp<AppParamList>>()
 
-  const onPressCard = () => {
+  const onPressCard = useCallback(() => {
     navigation.navigate(SCREEN_NAMES.App.ProductDetailsScreen, {
       productId: product?.id,
     })
-  }
+  }, [product?.id, navigation])
 
-  const handleAddProduct = () => {
+  const handleAddProduct = useCallback(() => {
     dispatch(addProduct({ product, quantity: 1 }))
-  }
+  }, [dispatch, product])
 
   return (
     <Card index={index} height={height} width={width}>

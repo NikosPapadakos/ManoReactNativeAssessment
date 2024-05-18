@@ -16,7 +16,7 @@ export const HomeScreen = () => {
   const [searchQuery, setSearchQuery] = React.useState<string>('')
 
   const [products, setProducts] = React.useState<ProductsArray>(
-    Array(20).fill(null)
+    Array(20).fill(null) // used for skeleton loading
   )
 
   const { data, isFetching, isLoading, error, refetch } =
