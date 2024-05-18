@@ -1,13 +1,6 @@
 import { COLORS, FONTS, FONT_SCALE, LETTER_SPACING, LINE_HEIGHT } from '@theme'
 import styled from 'styled-components/native'
 
-export const tabLabelStyle = {
-  fontFamily: FONTS.BOLD,
-  fontSize: 12,
-  lineHeight: LINE_HEIGHT.BODY.P3,
-  letterSpacing: LETTER_SPACING.BODY.P1,
-}
-
 export const H1 = styled.Text`
   font-family: ${FONTS.BOLD};
   font-size: ${FONT_SCALE.HEADINGS.H1}px;
@@ -75,14 +68,6 @@ export const P1 = styled.Text`
   color: ${COLORS.TEXT.BLACK_100};
 `
 
-export const P1_ITALIC = styled(P1)`
-  font-family: ${FONTS.REGULAR_ITALIC};
-`
-
-export const P1_LIGHT = styled(P1)`
-  font-family: ${FONTS.LIGHT};
-`
-
 export const P1_BOLD = styled(P1)`
   font-family: ${FONTS.BOLD};
 `
@@ -95,14 +80,6 @@ export const P2 = styled.Text`
   color: ${COLORS.TEXT.BLACK_100};
 `
 
-export const P2_ITALIC = styled(P2)`
-  font-family: ${FONTS.REGULAR_ITALIC};
-`
-
-export const P2_LIGHT = styled(P2)`
-  font-family: ${FONTS.LIGHT};
-`
-
 export const P2_BOLD = styled(P2)`
   font-family: ${FONTS.BOLD};
 `
@@ -113,14 +90,6 @@ export const P3 = styled.Text`
   line-height: ${LINE_HEIGHT.BODY.P3}px;
   letter-spacing: ${LETTER_SPACING.BODY.P3}px;
   color: ${COLORS.TEXT.BLACK_100};
-`
-
-export const P3_ITALIC = styled(P3)`
-  font-family: ${FONTS.REGULAR_ITALIC};
-`
-
-export const P3_LIGHT = styled(P3)`
-  font-family: ${FONTS.LIGHT};
 `
 
 export const P3_BOLD = styled(P3)`

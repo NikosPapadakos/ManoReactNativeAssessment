@@ -1,10 +1,6 @@
 const FONTS = {
-  BOLD: 'AnytimeSans-Bold2',
-  BOLD_ITALIC: 'AnytimeSans-BoldItalic',
-  REGULAR: 'AnytimeSans-Regular2',
-  REGULAR_ITALIC: 'AnytimeSans-RegularItalic',
-  LIGHT: 'AnytimeSans-Light',
-  LIGHT_ITALIC: 'AnytimeSans-LightItalic',
+  BOLD: 'Poppins-Bold',
+  REGULAR: 'Poppins-Regular',
 }
 
 const FONT_SCALE = {

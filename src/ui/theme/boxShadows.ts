@@ -11,7 +11,7 @@ export const BOX_SHADOWS = {
     shadow-radius: 7.49px;
     ${
       Platform.OS === 'android'
-        ? `shadow-color: ${COLORS.BOX_SHADOWS.DARK.android};
+        ? `shadow-color: ${COLORS.BOX_SHADOWS.LIGHT.android};
     elevation: 6;`
         : ''
     }
@@ -28,31 +28,4 @@ export const BOX_SHADOWS = {
       : ''
   }
 `,
-}
-
-export const BOX_SHADOWS_REACT_STYLE = {
-  CARD_SHADOW_LIGHT: {
-    shadowColor: COLORS.BOX_SHADOWS.LIGHT.ios,
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.37,
-    shadowRadius: 7.49,
-    ...(Platform.OS === 'android'
-      ? {
-          elevation: 6,
-          backgroundColor: COLORS.BOX_SHADOWS.DARK.android, // Assuming backgroundColor is required for Android
-        }
-      : {}),
-  },
-  CARD_SHADOW_DARK: {
-    shadowColor: COLORS.BOX_SHADOWS.DARK.ios,
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.37,
-    shadowRadius: 7.49,
-    ...(Platform.OS === 'android'
-      ? {
-          elevation: 6,
-          backgroundColor: COLORS.BOX_SHADOWS.DARK.android, // Assuming backgroundColor is required for Android
-        }
-      : {}),
-  },
 }

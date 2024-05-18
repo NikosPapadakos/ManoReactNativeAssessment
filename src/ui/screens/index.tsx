@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { SplashScreen } from '@components/SplashScreen'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { NAVIGATION_THEME } from '@theme'
 
 import { HomeScreen } from './HomeScreen'
 import { ProductDetailsScreen } from './ProductDetailsScreen'
@@ -17,14 +18,20 @@ export const AppNavigator = () => {
     <>
       <SplashScreen show={showSplash} />
       <NavigationContainer
+        theme={NAVIGATION_THEME}
         onReady={() => {
-          setShowSplash(false)
+          setTimeout(() => {
+            setShowSplash(false)
+          }, 2000)
         }}
       >
         <Stack.Navigator initialRouteName={SCREEN_NAMES.App.InitialRouteName}>
           <Stack.Screen
             name={SCREEN_NAMES.App.HomeScreen}
             component={HomeScreen}
+            options={{
+              headerShown: false,
+            }}
           />
           <Stack.Screen
             name={SCREEN_NAMES.App.ProductDetailsScreen}

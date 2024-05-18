@@ -5,16 +5,27 @@ import { MotiView } from 'moti'
 import { Logo, SplashContainer } from './styles'
 
 export const SplashScreen = ({ show }: { show: boolean }) => {
+  const [animationFinished, setAnimationFinished] = React.useState(false)
+
   return (
     <SplashContainer
+      style={{
+        zIndex: animationFinished ? -1 : 1,
+      }}
       from={{ opacity: 1 }}
       animate={{
         opacity: show ? 1 : 0,
-        display: show ? 'flex' : 'none',
       }}
       transition={{
         duration: 500,
-        delay: 1000,
+      }}
+      onDidAnimate={(
+        styleProp,
+        didAnimationFinish,
+        maybeValue,
+        { attemptedValue }
+      ) => {
+        setAnimationFinished(attemptedValue === 0 ? true : false)
       }}
     >
       <MotiView

@@ -11,7 +11,7 @@ export const SplashContainer = styled(MotiView)`
   position: absolute;
   height: ${height}px;
   width: ${width}px;
-  background-color: ${COLORS.BACKGROUND.TOTAL_WHITE};
+  background-color: ${COLORS.WHITE.TOTAL_WHITE};
   justify-content: center;
   align-items: center;
   z-index: 1000;

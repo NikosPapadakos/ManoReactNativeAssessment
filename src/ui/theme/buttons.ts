@@ -19,7 +19,7 @@ export const PrimaryButtonStyle = `
 `
 
 export const PrimaryTextStyle = `
-  color: ${COLORS.BACKGROUND.TOTAL_WHITE};
+  color: ${COLORS.WHITE.TOTAL_WHITE};
   font-family: ${FONTS.BOLD};
   font-size: ${FONT_SCALE.BODY.P1}px;
   line-height: ${LINE_HEIGHT.BODY.P3}px;

@@ -9,8 +9,9 @@ export const COLORS = {
   },
   SUPPORTIVE: {},
   SKELETON_PALETTE: ['#D0D0D0', '#DFDFDF', '#F1F1F1', '#E9E9E9'],
-  BACKGROUND: {
+  WHITE: {
     TOTAL_WHITE: '#FFFFFF',
+    LIGHT_WHITE: '#FAFAFA',
   },
   TEXT: {
     BLACK_100: '#231F20',

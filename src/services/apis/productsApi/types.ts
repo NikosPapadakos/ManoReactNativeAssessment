@@ -16,12 +16,13 @@ type Attachment = {
 
 type Category = {
   id: number
-  parent_category_id: number
+  parent_category_id: number | null
   title: string
   category_type: string
   class_name: string
   created_at: string
   images: Array<Attachment>
+  parent_category?: Category
 }
 
 export type Product = {
@@ -41,8 +42,8 @@ export type Product = {
   max_allowed_quantity: number
   shelf_zone: string
   shelf_section: string
-  storage_shelf_zone: string
-  storage_shelf_section: string
+  storage_shelf_zone: string | null
+  storage_shelf_section: string | null
   sap_quantity: number
   store_id: number
   tax_percentage: string
@@ -57,16 +58,13 @@ type RequestData = {
   ended_at: string
 }
 
-type ApiResponse = {
+type ApiResponse<T> = {
   success: boolean
   code: string
   message: string | null
   request_data: RequestData
+  data: T
 }
 
-export type AllProductsResponse = ApiResponse & {
-  items: Array<Product>
-}
-export type ProductFromIdResponse = ApiResponse & {
-  data: Product
-}
+export type AllProductsResponse = ApiResponse<{ items: Array<Product> }>
+export type ProductFromIdResponse = ApiResponse<Product>
