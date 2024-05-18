@@ -1,13 +1,10 @@
-import { Platform } from 'react-native';
+import { Platform } from 'react-native'
 
-
-
-import { CustomButton } from '@components/CustomButton';
-import { BORDER_RADII, COLORS, SCREEN_SPACING, SPACES } from '@theme';
-import { RoundedDarkShadowedCard } from '@theme/cards';
-import { H3, H4 } from '@theme/typography';
-import styled from 'styled-components/native';
-
+import { CustomButton } from '@components/CustomButton'
+import { BORDER_RADII, COLORS, SCREEN_SPACING, SPACES } from '@theme'
+import { RoundedDarkShadowedCard } from '@theme/cards'
+import { H3, H4 } from '@theme/typography'
+import styled from 'styled-components/native'
 
 export const Card = styled(RoundedDarkShadowedCard)<{
   index: number
