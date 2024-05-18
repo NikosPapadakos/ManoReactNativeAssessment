@@ -13,10 +13,5 @@ export const SPACES = {
 }
 
 export const SCREEN_SPACING = {
-  SCREEN_TOP_WITH_LOGO: 16, // space between status bar and content of screen
-  SCREEN_TOP_WITHOUT_LOGO: 36, // space between status bar and content of screen
-  SCREEN_BOTTOM_PADDING_WITH_TABBAR: 120,
-  BOTTOM_TAB_BAR_HEIGHT: 80,
   SCREEN_SIDE: 20, // horizontal space between screen edge and content (20 per side)
-  GUTTER: 16,
 }
