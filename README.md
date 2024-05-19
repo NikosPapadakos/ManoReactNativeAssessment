@@ -14,6 +14,11 @@ password: ManoAssessment
 
 PS. API responds at 1:27
 
+## Time spent per task
+
+Task 1: 12 hours
+Task 2: 1 hour
+
 ## How to Run
 
 1. Install the necessary packages:
